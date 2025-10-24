@@ -1,68 +1,73 @@
-# CT_RF11_ Inventário de Estoque
+# **Cenário RF01: Inventário de Estoque**
 
-## Objetivo
-Testar a precisão na reconciliação do estoque físico com o sistema após importação, contagem e lançamento do inventário.
+## **Caso de Teste CT_RF01_01: Importação de produtos via XML**
 
-## Pré-requisitos
-- Sistema com módulo de inventário ativo.
-- Arquivo XML com produtos fictícios para importação.
-- Acesso ao banco de dados para validação.
+| ID | Descrição |
+| :-- | :-- |
+| CT_RF01_01 | Importar produtos fictícios via arquivo XML e validar o cadastro no sistema. |
 
-## Cenários de Teste
+| **Pré-condições** |
+| :-- |
+| - O sistema deve ter o módulo de inventário ativo. <br> - O arquivo XML com produtos fictícios deve estar disponível. <br> - O usuário deve possuir permissão para realizar importações. |
 
-### CT_RF11_01_ Importação de produtos via XML
-**Descrição:** Importar produtos fictícios via arquivo XML e validar cadastro no sistema.
+| **Passos** |
+| :-- |
+| **DADO** que o usuário acessa o módulo de inventário do sistema <br> **E** seleciona a opção de importação de produtos <br> **QUANDO** importar o arquivo XML com 10 produtos fictícios <br> **ENTÃO** os produtos devem ser cadastrados corretamente e o sistema exibe uma mensagem de sucesso. |
 
-**Passos:**
-1. Acessar o módulo de inventário.
-2. Selecionar a opção de importação de produtos.
-3. Importar o arquivo XML com produtos fictícios.
-4. Confirmar a importação.
+| **Critérios de aceitação** |
+| :-- |
+| - Os produtos devem ser exibidos corretamente no sistema após a importação. <br> - Uma mensagem de sucesso deve confirmar o término do processo. <br> - Os dados devem ser gravados corretamente no banco de dados. |
 
-**Dados de Entrada:**
-- Arquivo XML com 10 produtos fictícios.
-
-**Resultado Esperado:**
-- Produtos cadastrados corretamente no sistema.
-- Mensagem de sucesso na importação.
-
-**Validação:**
-- Verificar no banco de dados se os produtos foram inseridos com os dados corretos.
+| **Evidência(s)** |
+| :--: |
+| [Vídeo](https://drive.google.com/file/d/1wFhWy344peuCfkgM-5b3duIxO48enreC/view?usp=drive_link) |
 
 ---
 
-### CT_RF11_02_ Contagem física simulada
-**Descrição:** Realizar contagem física simulada e registrar no sistema.
+## **Caso de Teste CT_RF01_02: Contagem física simulada**
 
-**Passos:**
-1. Acessar o módulo de inventário.
-2. Selecionar os produtos cadastrados.
-3. Inserir quantidades simuladas para contagem física.
-4. Salvar a contagem.
+| ID | Descrição |
+| :-- | :-- |
+| CT_RF01_02 | Realizar contagem física simulada e registrar as quantidades no sistema. |
 
-**Dados de Entrada:**
-- Quantidades simuladas para cada produto.
+| **Pré-condições** |
+| :-- |
+| - Os produtos devem estar previamente cadastrados no sistema. <br> - O módulo de inventário deve estar acessível. |
 
-**Resultado Esperado:**
-- Contagem registrada corretamente no sistema.
+| **Passos** |
+| :-- |
+| **DADO** que o usuário acessa o módulo de inventário <br> **E** seleciona os produtos cadastrados <br> **QUANDO** inserir as quantidades simuladas de contagem física e salvar <br> **ENTÃO** o sistema deve registrar corretamente as contagens. |
 
-**Validação:**
-- Conferir no banco de dados os registros da contagem física.
+| **Critérios de aceitação** |
+| :-- |
+| - As contagens devem ser registradas sem erro no sistema. <br> - Os registros devem ser consistentes no banco de dados. |
+
+| **Evidência(s)** |
+| :--: |
+| [Vídeo](https://www.youtube.com) |
 
 ---
 
-### CT_RF11_03_ Lançamento do inventário e geração de relatório de ajustes
-**Descrição:** Lançar o inventário no sistema e gerar relatório de ajustes.
+## **Caso de Teste CT_RF01_03: Lançamento do inventário e geração de relatório de ajustes**
 
-**Passos:**
-1. Acessar o módulo de inventário.
-2. Realizar o lançamento do inventário com base na contagem física.
-3. Gerar o relatório de ajustes.
+| ID | Descrição |
+| :-- | :-- |
+| CT_RF01_03 | Lançar o inventário no sistema e gerar o relatório de ajustes conforme contagem física. |
 
-**Resultado Esperado:**
-- Saldos ajustados conforme contagem física.
-- Relatório de ajustes gerado com as diferenças entre saldo contabilizado e ajustado.
+| **Pré-condições** |
+| :-- |
+| - A contagem física simulada deve ter sido concluída e salva. <br> - O usuário deve possuir permissão para lançar inventários. |
 
-**Validação:**
-- Verificar no banco de dados a consistência entre saldo contabilizado e saldo ajustado.
-- Conferir o relatório gerado.
+| **Passos** |
+| :-- |
+| **DADO** que o usuário acessa o módulo de inventário <br> **E** seleciona o inventário com contagem concluída <br> **QUANDO** realizar o lançamento do inventário e gerar o relatório de ajustes <br> **ENTÃO** o sistema deve ajustar os saldos conforme a contagem e apresentar as diferenças entre saldo contabilizado e ajustado. |
+
+| **Critérios de aceitação** |
+| :-- |
+| - O relatório de ajustes deve ser gerado corretamente. <br> - Os saldos contabilizado e ajustado devem estar consistentes no banco de dados. <br> - As diferenças devem estar corretamente refletidas no sistema. |
+
+| **Evidência(s)** |
+| :--: |
+| [Vídeo](https://www.youtube.com) |
+
+---

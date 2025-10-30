@@ -8,15 +8,22 @@
 
 | **Pré-condições** |
 | :-- |
-| - O sistema deve ter o módulo de inventário ativo. <br> - O arquivo XML com produtos fictícios deve estar disponível. <br> - O usuário deve possuir permissão para realizar importações. |
+| - O sistema deve ter o módulo de inventário ativo. |
+| - O arquivo XML com produtos fictícios deve estar disponível. |
+| - O usuário deve possuir permissão para realizar importações. |
 
 | **Passos** |
 | :-- |
-| **DADO** que o usuário acessa o módulo de inventário do sistema <br> **E** seleciona a opção de importação de produtos <br> **QUANDO** importar o arquivo XML com 10 produtos fictícios <br> **ENTÃO** os produtos devem ser cadastrados corretamente e o sistema exibe uma mensagem de sucesso. |
+| **DADO** que o usuário acessa o módulo de inventário do sistema |
+| **E** seleciona a opção de importação de produtos |
+| **QUANDO** importar o arquivo XML com 10 produtos fictícios |
+| **ENTÃO** os produtos devem ser cadastrados corretamente e o sistema exibe uma mensagem de sucesso. |
 
 | **Critérios de aceitação** |
 | :-- |
-| - Os produtos devem ser exibidos corretamente no sistema após a importação. <br> - Uma mensagem de sucesso deve confirmar o término do processo. <br> - Os dados devem ser gravados corretamente no banco de dados. |
+| - Os produtos devem ser exibidos corretamente no sistema após a importação. |
+| - Uma mensagem de sucesso deve confirmar o término do processo. |
+| - Os dados devem ser gravados corretamente no banco de dados. |
 
 | **Evidência(s)** |
 | :--: |
@@ -32,19 +39,24 @@
 
 | **Pré-condições** |
 | :-- |
-| - Os produtos devem estar previamente cadastrados no sistema. <br> - O módulo de inventário deve estar acessível. |
+| - Os produtos devem estar previamente cadastrados no sistema. |
+| - O módulo de inventário deve estar acessível. |
 
 | **Passos** |
 | :-- |
-| **DADO** que o usuário acessa o módulo de inventário <br> **E** seleciona os produtos cadastrados <br> **QUANDO** inserir as quantidades simuladas de contagem física e salvar <br> **ENTÃO** o sistema deve registrar corretamente as contagens. |
+| **DADO** que o usuário acessa o módulo de inventário |
+| **E** seleciona os produtos cadastrados |
+| **QUANDO** inserir as quantidades simuladas de contagem física e salvar |
+| **ENTÃO** o sistema deve registrar corretamente as contagens. |
 
 | **Critérios de aceitação** |
 | :-- |
-| - As contagens devem ser registradas sem erro no sistema. <br> - Os registros devem ser consistentes no banco de dados. |
+| - As contagens devem ser registradas sem erro no sistema. |
+| - Os registros devem ser consistentes no banco de dados. |
 
 | **Evidência(s)** |
 | :--: |
-| [Vídeo](https://www.youtube.com) |
+| [Vídeo](https://drive.google.com/file/d/1XA7U3ognJ4O-oNXj0uhbqFVemDoYsNUd/view?usp=drive_link) |
 
 ---
 
@@ -56,18 +68,24 @@
 
 | **Pré-condições** |
 | :-- |
-| - A contagem física simulada deve ter sido concluída e salva. <br> - O usuário deve possuir permissão para lançar inventários. |
+| - A contagem física simulada deve ter sido concluída e salva. |
+| - O usuário deve possuir permissão para lançar inventários. |
 
 | **Passos** |
 | :-- |
-| **DADO** que o usuário acessa o módulo de inventário <br> **E** seleciona o inventário com contagem concluída <br> **QUANDO** realizar o lançamento do inventário e gerar o relatório de ajustes <br> **ENTÃO** o sistema deve ajustar os saldos conforme a contagem e apresentar as diferenças entre saldo contabilizado e ajustado. |
+| **DADO** que o usuário acessa o módulo de inventário |
+| **E** seleciona o inventário com contagem concluída |
+| **QUANDO** realizar o lançamento do inventário e gerar o relatório de ajustes |
+| **ENTÃO** o sistema deve ajustar os saldos conforme a contagem e apresentar as diferenças entre saldo contabilizado e ajustado. |
 
 | **Critérios de aceitação** |
 | :-- |
-| - O relatório de ajustes deve ser gerado corretamente. <br> - Os saldos contabilizado e ajustado devem estar consistentes no banco de dados. <br> - As diferenças devem estar corretamente refletidas no sistema. |
+| - O relatório de ajustes deve ser gerado corretamente. |
+| - Os saldos contabilizado e ajustado devem estar consistentes no banco de dados. |
+| - As diferenças devem estar corretamente refletidas no sistema. |
 
 | **Evidência(s)** |
 | :--: |
-| [Vídeo](https://www.youtube.com) |
+| [Vídeo](https://drive.google.com/file/d/1Awok59jo3gfCkZ8LFbnSNeTJp0qdS6W4/view?usp=drive_link) |
 
 ---

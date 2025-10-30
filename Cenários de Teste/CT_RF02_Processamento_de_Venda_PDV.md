@@ -26,7 +26,9 @@ Validar o fluxo completo de vendas e fechamento de caixa, incluindo descontos e 
 - Itens adicionados corretamente ao carrinho.
 - Total da venda calculado corretamente.
 
----
+| **Evidência(s)** |
+| :--: |
+| [Vídeo](https://drive.google.com/file/d/1F1bvwLGbqAiAmATXZs5m6MkNcAFYhlTc/view?usp=drive_link) |
 
 ### CT_RF12_02_ Aplicar desconto promocional em 1 item
 **Descrição:** Aplicar desconto em um dos itens da venda.

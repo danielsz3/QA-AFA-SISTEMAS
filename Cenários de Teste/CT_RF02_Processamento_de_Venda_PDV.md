@@ -44,10 +44,6 @@ Validar o fluxo completo de vendas e fechamento de caixa, incluindo descontos e 
 - Desconto aplicado corretamente no item.
 - Total da venda atualizado com desconto.
 
-| **Evidência(s)** |
-| :--: |
-| [Vídeo](https://drive.google.com/file/d/1X37sq-iUuB7aUV5Bf3HErGDwMRERPuWk/view?usp=sharing) |
-
 ---
 
 ### CT_RF12_03_ Finalizar venda com pagamento misto
@@ -61,6 +57,10 @@ Validar o fluxo completo de vendas e fechamento de caixa, incluindo descontos e 
 **Resultado Esperado:**
 - Pagamento registrado corretamente nas duas formas.
 - Venda finalizada com sucesso.
+
+| **Evidência(s)** |
+| :--: |
+| [Vídeo](https://drive.google.com/file/d/1X37sq-iUuB7aUV5Bf3HErGDwMRERPuWk/view?usp=sharing) |
 
 ---
 

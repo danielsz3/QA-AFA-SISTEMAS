@@ -28,7 +28,7 @@ Validar o fluxo completo de vendas e fechamento de caixa, incluindo descontos e 
 
 | **Evidência(s)** |
 | :--: |
-| [Vídeo](https://drive.google.com/file/d/1F1bvwLGbqAiAmATXZs5m6MkNcAFYhlTc/view?usp=drive_link) |
+| [Vídeo](https://drive.google.com/file/d/1F1bvwLGbqAiAmATXZs5m6MkNcAFYhlTc/view?usp=sharing) |
 
 ---
 
@@ -43,6 +43,10 @@ Validar o fluxo completo de vendas e fechamento de caixa, incluindo descontos e 
 **Resultado Esperado:**
 - Desconto aplicado corretamente no item.
 - Total da venda atualizado com desconto.
+
+| **Evidência(s)** |
+| :--: |
+| [Vídeo](https://drive.google.com/file/d/1X37sq-iUuB7aUV5Bf3HErGDwMRERPuWk/view?usp=sharing) |
 
 ---
 

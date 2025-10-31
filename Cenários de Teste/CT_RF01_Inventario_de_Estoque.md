@@ -31,11 +31,42 @@
 
 ---
 
-## **Caso de Teste CT_RF01_02: Contagem física simulada**
+## **Caso de Teste CT_RF01_02: Importação de produtos via XML inválido**
 
 | ID | Descrição |
 | :-- | :-- |
-| CT_RF01_02 | Realizar contagem física simulada e registrar as quantidades no sistema. |
+| CT_RF01_02 | Tentar importar um arquivo XML inválido ou corrompido e verificar se o sistema trata o erro corretamente, sem comprometer o banco de dados. |
+
+| **Pré-condições** |
+| :-- |
+| - O sistema deve ter o módulo de inventário ativo. |
+| - O arquivo XML a ser importado deve conter estrutura incorreta, campos obrigatórios ausentes ou estar corrompido. |
+| - O usuário deve possuir permissão para realizar importações. |
+
+| **Passos** |
+| :-- |
+| **DADO** que o usuário acessa o módulo de inventário do sistema |
+| **E** seleciona a opção de importação de produtos |
+| **QUANDO** tentar importar um arquivo XML inválido (estrutura incorreta ou dados inconsistentes) |
+| **ENTÃO** o sistema deve rejeitar o arquivo, exibir uma mensagem de erro clara e não gravar nenhuma informação no banco de dados. |
+
+| **Critérios de aceitação** |
+| :-- |
+| - O sistema deve identificar e bloquear a importação do arquivo XML inválido. |
+| - Nenhum produto deve ser cadastrado ou alterado no banco de dados. |
+| - Uma mensagem de erro amigável deve informar o motivo da falha (ex.: “Arquivo XML inválido ou corrompido”). |
+
+| **Evidência(s)** |
+| :--: |
+| [Vídeo](https://drive.google.com/file/d/15aa9cKuOg-NuKhPrGGPuQCmBWHlaRbje/view?usp=drive_link) |
+
+---
+
+## **Caso de Teste CT_RF01_03: Contagem física simulada**
+
+| ID | Descrição |
+| :-- | :-- |
+| CT_RF01_03 | Realizar contagem física simulada e registrar as quantidades no sistema. |
 
 | **Pré-condições** |
 | :-- |
@@ -53,6 +84,7 @@
 | :-- |
 | - As contagens devem ser registradas sem erro no sistema. |
 | - Os registros devem ser consistentes no banco de dados. |
+| - O usuário deve possuir permissão para realizar contagens. |
 
 | **Evidência(s)** |
 | :--: |
@@ -60,16 +92,47 @@
 
 ---
 
-## **Caso de Teste CT_RF01_03: Lançamento do inventário e geração de relatório de ajustes**
+## **Caso de Teste CT_RF01_04: Contagem física simulada com dados inconsistentes**
 
 | ID | Descrição |
 | :-- | :-- |
-| CT_RF01_03 | Lançar o inventário no sistema e gerar o relatório de ajustes conforme contagem física. |
+| CT_RF01_04 | Tentar realizar a contagem física com valores inválidos ou campos em branco e verificar se o sistema bloqueia o registro incorreto. |
 
 | **Pré-condições** |
 | :-- |
-| - A contagem física simulada deve ter sido concluída e salva. |
+| - Os produtos devem estar previamente cadastrados no sistema. |
+| - O módulo de inventário deve estar acessível. |
+| - O usuário deve possuir permissão para realizar contagens. |
+
+| **Passos** |
+| :-- |
+| **DADO** que o usuário acessa o módulo de inventário |
+| **E** seleciona os produtos cadastrados |
+| **QUANDO** inserir valores negativos, campos vazios ou caracteres não numéricos nas quantidades e tentar salvar |
+| **ENTÃO** o sistema deve rejeitar o registro da contagem e exibir uma mensagem de erro explicando a inconsistência. |
+
+| **Critérios de aceitação** |
+| :-- |
+| - O sistema não deve permitir salvar contagens com valores inválidos. |
+| - Nenhum dado incorreto deve ser gravado no banco de dados. |
+| - Uma mensagem de erro deve informar claramente o motivo da rejeição (ex.: “Quantidade inválida ou campo obrigatório ausente”). |
+
+| **Evidência(s)** |
+| :--: |
+| [Vídeo](https://drive.google.com/file/d/1ySbZ2tY9EktjFsmPr4C6Qt6U1TxkkmlH/view?usp=drive_link) |
+
+---
+
+## **Caso de Teste CT_RF01_05: Lançamento do inventário e geração de relatório de ajustes**
+
+| ID | Descrição |
+| :-- | :-- |
+| CT_RF01_05 | Lançar o inventário no sistema e gerar o relatório de ajustes conforme contagem física. |
+
+| **Pré-condições** |
+| :-- |
 | - O usuário deve possuir permissão para lançar inventários. |
+| - A contagem física simulada deve ter sido concluída e salva. |
 
 | **Passos** |
 | :-- |
@@ -87,5 +150,36 @@
 | **Evidência(s)** |
 | :--: |
 | [Vídeo](https://drive.google.com/file/d/1Awok59jo3gfCkZ8LFbnSNeTJp0qdS6W4/view?usp=drive_link) |
+
+---
+
+## **Caso de Teste CT_RF01_06: Lançamento do inventário sem contagem concluída**
+
+| ID | Descrição |
+| :-- | :-- |
+| CT_RF01_06 | Tentar lançar o inventário sem que a contagem física tenha sido concluída e verificar o comportamento do sistema. |
+
+| **Pré-condições** |
+| :-- |
+| - O usuário deve possuir permissão para lançar inventários. |
+| - Deve existir um inventário cadastrado, porém com contagem física não finalizada. |
+
+| **Passos** |
+| :-- |
+| **DADO** que o usuário acessa o módulo de inventário |
+| **E** seleciona um inventário cuja contagem ainda não foi concluída |
+| **QUANDO** tentar realizar o lançamento e gerar o relatório de ajustes |
+| **ENTÃO** o sistema deve impedir o lançamento, exibir mensagem de erro e não gerar o relatório. |
+
+| **Critérios de aceitação** |
+| :-- |
+| - O sistema não deve permitir o lançamento de inventário com contagem pendente. |
+| - Nenhum dado deve ser alterado no banco de dados. |
+| - Uma mensagem clara deve informar o motivo da rejeição (ex.: “Não é possível lançar inventário sem contagem concluída”). |
+| - O sistema deve manter a integridade dos dados existentes. |
+
+| **Evidência(s)** |
+| :--: |
+| [Vídeo](https://drive.google.com/file/d/1WDRbBf871T0NiIn5HVYX3-Hz_dSF7K31/view?usp=drive_link) |
 
 ---

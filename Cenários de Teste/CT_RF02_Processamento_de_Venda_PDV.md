@@ -26,6 +26,10 @@ Validar o fluxo completo de vendas e fechamento de caixa, incluindo descontos e 
 - Itens adicionados corretamente ao carrinho.
 - Total da venda calculado corretamente.
 
+| **Evidência(s)** |
+| :--: |
+| [Vídeo](https://drive.google.com/file/d/1F1bvwLGbqAiAmATXZs5m6MkNcAFYhlTc/view?usp=sharing) |
+
 ---
 
 ### CT_RF12_02_ Aplicar desconto promocional em 1 item
@@ -39,6 +43,10 @@ Validar o fluxo completo de vendas e fechamento de caixa, incluindo descontos e 
 **Resultado Esperado:**
 - Desconto aplicado corretamente no item.
 - Total da venda atualizado com desconto.
+
+| **Evidência(s)** |
+| :--: |
+| [Vídeo](https://drive.google.com/file/d/1Zq-lt9MmpESbBQYuxg43J6YVycW3Aivb/view?usp=sharing) |
 
 ---
 
@@ -54,6 +62,10 @@ Validar o fluxo completo de vendas e fechamento de caixa, incluindo descontos e 
 - Pagamento registrado corretamente nas duas formas.
 - Venda finalizada com sucesso.
 
+| **Evidência(s)** |
+| :--: |
+| [Vídeo](https://drive.google.com/file/d/1X37sq-iUuB7aUV5Bf3HErGDwMRERPuWk/view?usp=sharing) |
+
 ---
 
 ### CT_RF12_04_ Fechamento de caixa e validação por tipo de documento
@@ -67,6 +79,11 @@ Validar o fluxo completo de vendas e fechamento de caixa, incluindo descontos e 
 **Resultado Esperado:**
 - Fechamento realizado com sucesso.
 - Totais por tipo de documento conferidos e corretos.
+
+| **Evidência(s)** |
+| :--: |
+| [Vídeo](https://drive.google.com/file/d/1ZECSYeDLawtLU_q2cMMkHZPBA5tauhtb/view?usp=sharing) |
+
 
 ---
 

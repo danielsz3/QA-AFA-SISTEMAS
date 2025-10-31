@@ -80,6 +80,11 @@ Validar o fluxo completo de vendas e fechamento de caixa, incluindo descontos e 
 - Fechamento realizado com sucesso.
 - Totais por tipo de documento conferidos e corretos.
 
+| **Evidência(s)** |
+| :--: |
+| [Vídeo](https://drive.google.com/file/d/1ZECSYeDLawtLU_q2cMMkHZPBA5tauhtb/view?usp=sharing) |
+
+
 ---
 
 ### Validação BD

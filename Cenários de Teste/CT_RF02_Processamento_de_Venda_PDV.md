@@ -44,6 +44,10 @@ Validar o fluxo completo de vendas e fechamento de caixa, incluindo descontos e 
 - Desconto aplicado corretamente no item.
 - Total da venda atualizado com desconto.
 
+| **Evidência(s)** |
+| :--: |
+| [Vídeo](https://drive.google.com/file/d/1Zq-lt9MmpESbBQYuxg43J6YVycW3Aivb/view?usp=sharing) |
+
 ---
 
 ### CT_RF12_03_ Finalizar venda com pagamento misto

@@ -183,3 +183,95 @@
 | [Vídeo](https://drive.google.com/file/d/1WDRbBf871T0NiIn5HVYX3-Hz_dSF7K31/view?usp=drive_link) |
 
 ---
+
+## **Caso de Teste CT_RF01_07: Exclusão de produto cadastrado**
+
+| ID | Descrição |
+| :-- | :-- |
+| CT_RF01_07 | Excluir um produto cadastrado e validar se ele é removido corretamente do sistema e do banco de dados. |
+
+| **Pré-condições** |
+| :-- |
+| - Deve existir ao menos um produto cadastrado no sistema. |
+| - O usuário deve possuir permissão para exclusão. |
+| - O produto não deve estar vinculado a inventário ativo. |
+
+| **Passos** |
+| :-- |
+| **DADO** que o usuário acessa o módulo de inventário |
+| **E** visualiza a lista de produtos cadastrados |
+| **QUANDO** aciona a opção “Excluir produto” para um item existente |
+| **ENTÃO** o sistema deve remover o registro, exibir mensagem de confirmação e atualizar a lista de produtos. |
+
+| **Critérios de aceitação** |
+| :-- |
+| - O produto é removido corretamente do banco de dados. |
+| - Uma mensagem de sucesso é exibida confirmando a exclusão. |
+| - O sistema impede exclusão de produtos vinculados a inventários ativos, exibindo mensagem explicativa. |
+
+| **Evidência(s)** |
+| :--: |
+| [Vídeo](https://drive.google.com/file/d/1dAYEUtW7Dz9VOxucKaGdKb-Rs72E0Oii/view?usp=drive_link) |
+| [Vídeo](https://drive.google.com/file/d/1cvoZ7S2zUmI5tZNiVSEjtHzBGTZY27z2/view?usp=drive_link) |
+
+---
+
+## **Caso de Teste CT_RF01_08: Consulta e filtragem de inventário**
+
+| ID | Descrição |
+| :-- | :-- |
+| CT_RF01_08 | Consultar produtos e inventários aplicando filtros e visualizar detalhes das contagens. |
+
+| **Pré-condições** |
+| :-- |
+| - Devem existir produtos e inventários cadastrados. |
+| - O usuário deve possuir permissão de consulta. |
+
+| **Passos** |
+| :-- |
+| **DADO** que o usuário acessa o módulo de inventário |
+| **E** utiliza os filtros disponíveis (por descrição, código, data ou status) |
+| **QUANDO** aplicar um filtro específico e selecionar um inventário |
+| **ENTÃO** o sistema deve listar apenas os registros correspondentes e permitir visualização detalhada. |
+
+| **Critérios de aceitação** |
+| :-- |
+| - O sistema deve exibir corretamente os resultados filtrados. |
+| - A visualização de detalhes deve exibir as informações completas (saldo contabilizado, contagem física, diferenças). |
+| - O tempo de resposta deve ser adequado e os dados devem estar consistentes com o banco de dados. |
+
+| **Evidência(s)** |
+| :--: |
+| [Vídeo](https://drive.google.com/file/d/1GW0_NTKbw-aBwaCEb9WZjNsBK2aQgu1J/view?usp=drive_link) |
+
+---
+
+## **Caso de Teste CT_RF01_09: Validação de integridade no banco de dados**
+
+| ID | Descrição |
+| :-- | :-- |
+| CT_RF01_09 | Validar a consistência dos dados no banco após execução completa do ciclo de inventário. |
+
+| **Pré-condições** |
+| :-- |
+| - Deve ter sido realizada importação de produtos, contagem física e lançamento do inventário. |
+| - O relatório de ajustes deve estar disponível. |
+
+| **Passos** |
+| :-- |
+| **DADO** que o ciclo de inventário foi concluído |
+| **E** os saldos ajustados foram lançados |
+| **QUANDO** o analista consultar diretamente o banco de dados |
+| **ENTÃO** os saldos contabilizado e ajustado devem ser coerentes e refletir as diferenças registradas no relatório. |
+
+| **Critérios de aceitação** |
+| :-- |
+| - O saldo contabilizado e o saldo ajustado devem estar consistentes. |
+| - Nenhum registro duplicado, nulo ou inconsistente deve existir. |
+| - As tabelas de histórico e auditoria devem registrar as alterações com data, hora e usuário. |
+
+| **Evidência(s)** |
+| :--: |
+| [Vídeo]("") |
+
+---

@@ -1,66 +1,151 @@
-# CT_RF13_ Compra com Fornecedores
+# **Cenário RF03: Compra com Fornecedores**
 
-## Objetivo
-Testar gestão de supply chain e controle de pagamento total e parcial.
+## **Caso de Teste CT_RF03_01: Cadastrar novo fornecedor**
 
-## Pré-requisitos
-- Sistema com módulo de compras ativo.
-- Cadastro de fornecedores disponível.
+| ID | Descrição |
+| :-- | :-- |
+| CT_RF03_01 | Cadastrar um novo fornecedor no sistema. |
 
-## Cenários de Teste
+| **Pré-condições** |
+| :-- |
+| - O sistema deve ter o módulo de compras ativo. |
+| - O usuário deve possuir permissão para gerenciar fornecedores. |
 
-### CT_RF13_01_ Cadastrar novo fornecedor
-**Descrição:** Cadastrar um novo fornecedor no sistema.
+| **Passos** |
+| :-- |
+| **DADO** que o usuário acessa o módulo de fornecedores |
+| **E** insere os dados de um novo fornecedor |
+| **QUANDO** salvar o cadastro |
+| **ENTÃO** o fornecedor deve ser cadastrado corretamente e o sistema deve exibir uma mensagem de sucesso. |
 
-**Passos:**
-1. Acessar módulo de fornecedores.
-2. Inserir dados do novo fornecedor.
-3. Salvar cadastro.
+| **Critérios de aceitação** |
+| :-- |
+| - O fornecedor deve constar na lista de fornecedores cadastrados. |
+| - Os dados devem ser gravados corretamente no banco de dados. |
+| - Deve ser exibida uma mensagem confirmando o cadastro. |
 
-**Resultado Esperado:**
-- Fornecedor cadastrado com sucesso.
-
----
-
-### CT_RF13_02_ Gerar pedido de compra com 10 itens
-**Descrição:** Criar pedido de compra com 10 itens.
-
-**Passos:**
-1. Acessar módulo de pedidos de compra.
-2. Selecionar fornecedor cadastrado.
-3. Adicionar 10 itens ao pedido.
-4. Salvar pedido.
-
-**Resultado Esperado:**
-- Pedido criado com os 10 itens corretamente.
+| **Evidência(s)** |
+| :--: |
+| [Vídeo]("") |
 
 ---
 
-### CT_RF13_03_ Simular parcelamento e pagamentos
-**Descrição:** Simular parcelamento em 5 vezes, pagar a primeira parcela integralmente e a segunda parcialmente.
+## **Caso de Teste CT_RF03_02: Gerar pedido de compra com 10 itens**
 
-**Passos:**
-1. Parcelar contas a pagar em 5 vezes.
-2. Efetuar pagamento total da primeira parcela.
-3. Efetuar pagamento parcial da segunda parcela.
+| ID | Descrição |
+| :-- | :-- |
+| CT_RF03_02 | Criar um pedido de compra contendo 10 itens. |
 
-**Resultado Esperado:**
-- Pagamentos registrados corretamente.
-- Parcelas atualizadas conforme pagamentos.
+| **Pré-condições** |
+| :-- |
+| - O fornecedor deve estar previamente cadastrado no sistema. |
+| - O módulo de pedidos de compra deve estar ativo. |
+
+| **Passos** |
+| :-- |
+| **DADO** que o usuário acessa o módulo de pedidos de compra |
+| **E** seleciona um fornecedor cadastrado |
+| **QUANDO** adicionar 10 itens ao pedido e salvar |
+| **ENTÃO** o pedido deve ser criado com todos os 10 itens registrados corretamente. |
+
+| **Critérios de aceitação** |
+| :-- |
+| - Os 10 itens devem aparecer no pedido de compra. |
+| - Os valores, quantidades e descrições dos itens devem ser consistentes. |
+| - O pedido deve ser salvo corretamente no banco de dados. |
+
+| **Evidência(s)** |
+| :--: |
+| [Vídeo]("") |
 
 ---
 
-### CT_RF13_04_ Fechamento de caixa
-**Descrição:** Realizar fechamento de caixa após pagamentos.
+## **Caso de Teste CT_RF03_03: Simular parcelamento e pagamentos**
 
-**Passos:**
-1. Acessar módulo de fechamento de caixa.
-2. Fechar caixa.
+| ID | Descrição |
+| :-- | :-- |
+| CT_RF03_03 | Simular parcelamento em 5 vezes, pagar a primeira parcela integralmente e a segunda parcialmente. |
 
-**Resultado Esperado:**
-- Fechamento realizado com sucesso.
+| **Pré-condições** |
+| :-- |
+| - Deve existir um pedido de compra gerando contas a pagar. |
+| - O usuário deve ter permissão para registrar pagamentos. |
+| - O módulo financeiro deve estar ativo. |
+
+| **Passos** |
+| :-- |
+| **DADO** que o usuário parcelou o pedido em 5 parcelas |
+| **E** possui as parcelas geradas no contas a pagar |
+| **QUANDO** registrar o pagamento total da primeira parcela |
+| **E** registrar um pagamento parcial da segunda parcela |
+| **ENTÃO** o sistema deve atualizar corretamente os valores pagos e pendentes, mantendo o histórico de pagamentos. |
+
+| **Critérios de aceitação** |
+| :-- |
+| - A primeira parcela deve constar como paga integralmente. |
+| - A segunda parcela deve apresentar saldo pendente após pagamento parcial. |
+| - O sistema deve registrar corretamente os valores no banco de dados. |
+| - O histórico de pagamentos deve ser atualizado mantendo integridade e rastreabilidade. |
+
+| **Evidência(s)** |
+| :--: |
+| [Vídeo]("") |
 
 ---
 
-### Validação BD
-- Confirmar atualização de estoque apenas para itens recebidos.
+## **Caso de Teste CT_RF03_04: Fechamento de caixa**
+
+| ID | Descrição |
+| :-- | :-- |
+| CT_RF03_04 | Realizar fechamento de caixa após registros de pagamento. |
+
+| **Pré-condições** |
+| :-- |
+| - Devem existir pagamentos registrados no período. |
+| - O módulo de fechamento de caixa deve estar disponível. |
+| - O usuário deve possuir permissão para fechar o caixa. |
+
+| **Passos** |
+| :-- |
+| **DADO** que pagamentos foram registrados no sistema |
+| **QUANDO** o usuário acessar o módulo de fechamento de caixa e executar o fechamento |
+| **ENTÃO** o sistema deve concluir o fechamento e registrar os totais do período. |
+
+| **Critérios de aceitação** |
+| :-- |
+| - O fechamento deve ser concluído sem erros. |
+| - Os valores do caixa devem refletir corretamente os pagamentos efetuados. |
+| - As informações devem ser gravadas no banco de dados com data, hora e usuário. |
+
+| **Evidência(s)** |
+| :--: |
+| — |
+
+---
+
+## **Caso de Teste CT_RF03_05: Validação no Banco de Dados**
+
+| ID | Descrição |
+| :-- | :-- |
+| CT_RF03_05 | Validar no banco de dados se o estoque foi atualizado apenas para itens recebidos. |
+
+| **Pré-condições** |
+| :-- |
+| - Deve existir um pedido de compra com itens recebidos e não recebidos. |
+| - O usuário deve possuir acesso de consulta ao banco de dados (perfil de analista). |
+
+| **Passos** |
+| :-- |
+| **DADO** que o pedido de compra possui itens com status recebidos e pendentes |
+| **QUANDO** o analista consultar diretamente o banco de dados |
+| **ENTÃO** apenas os itens recebidos devem ter registrado movimentação de entrada no estoque. |
+
+| **Critérios de aceitação** |
+| :-- |
+| - Nenhuma movimentação de estoque deve existir para itens não recebidos. |
+| - Os itens recebidos devem apresentar movimentações consistentes com o pedido. |
+| - Não deve haver registros duplicados ou inconsistentes. |
+
+| **Evidência(s)** |
+| :--: |
+| [Vídeo]("") |

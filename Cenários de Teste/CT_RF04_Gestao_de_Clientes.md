@@ -27,7 +27,7 @@
 
 | **Evidência(s)** |
 | :--: |
-| [Vídeo]("") |
+| [Vídeo](https://drive.google.com/file/d/1OHwc20_Z0nVAVA9KvYQmB2FGM1UyPAdU/view?usp=drive_link) |
 
 ---
 
@@ -56,7 +56,7 @@
 
 | **Evidência(s)** |
 | :--: |
-| [Vídeo]("") |
+| [Vídeo](https://drive.google.com/file/d/1Ck6xLJGYv5msypZnq3HXkd9cdPiqZx4w/view?usp=drive_link) |
 
 ---
 
@@ -85,7 +85,7 @@
 
 | **Evidência(s)** |
 | :--: |
-| [Vídeo]("") |
+| [Vídeo](https://drive.google.com/file/d/1001f85eBPOavFPC-y3YZxyCDiG_vaX_s/view?usp=drive_link) |
 
 ---
 
@@ -114,7 +114,7 @@
 
 | **Evidência(s)** |
 | :--: |
-| [Vídeo]("") |
+| [Vídeo](https://drive.google.com/file/d/1Eih2m7Lxhp0ppFbE4L5i1RfGn2_URrYz/view?usp=drive_link) |
 
 ---
 
@@ -146,7 +146,7 @@
 
 | **Evidência(s)** |
 | :--: |
-| [Vídeo]("") |
+| [Vídeo](https://drive.google.com/file/d/1UFntJdFH7M4NjHLj-gawbfmfKia737jZ/view?usp=drive_link) |
 
 ---
 
@@ -175,7 +175,7 @@
 
 | **Evidência(s)** |
 | :--: |
-| [Vídeo]("") |
+| [Vídeo](https://drive.google.com/file/d/1NtpoyxIemrV03SB4jMF940ltH_rX4cpa/view?usp=drive_link) |
 
 ---
 
@@ -204,7 +204,7 @@
 
 | **Evidência(s)** |
 | :--: |
-| [Vídeo]("") |
+| [Vídeo](https://drive.google.com/file/d/1-JS-1bq0Cyqk1Y69-SqDUhIQPtGdn9R-/view?usp=drive_link) |
 
 ---
 
@@ -233,7 +233,7 @@
 
 | **Evidência(s)** |
 | :--: |
-| [Vídeo]("") |
+| [Vídeo](https://drive.google.com/file/d/14muS3etAUqR0gZgstOGMmZ2BVtsoN2k-/view?usp=drive_link) |
 
 ---
 
@@ -294,7 +294,7 @@
 
 | **Evidência(s)** |
 | :--: |
-| [Vídeo]("") |
+| [Vídeo](https://drive.google.com/file/d/1kfXcbHbVmPxf8Nz9lTfwmqj7x-_urOTP/view?usp=drive_link) |
 
 ---
 
@@ -322,7 +322,7 @@
 
 | **Evidência(s)** |
 | :--: |
-| [Vídeo]("") |
+| [Vídeo](https://drive.google.com/file/d/15SM-iCsnmCsyXfaZ_LkEUWFyd_l-U7mg/view?usp=drive_link) |
 
 ---
 
@@ -350,35 +350,7 @@
 
 | **Evidência(s)** |
 | :--: |
-| [Vídeo]("") |
-
----
-
-## **Caso de Teste CT_RF04_NEG_05: Tentativa de compra muito acima do limite (erro crítico)**
-
-| ID | Descrição |
-| :-- | :-- |
-| CT_RF04_NEG_05 | Registrar compra com valor extremamente acima do limite, simulando fraude. |
-
-| **Pré-condições** |
-| :-- |
-| - Cliente com limite de crédito configurado. |
-
-| **Passos** |
-| :-- |
-| **DADO** que o usuário registra uma compra |
-| **QUANDO** o valor for muito acima do limite (ex.: limite 1.000 → compra 50.000) |
-| **ENTÃO** o sistema deve bloquear a compra e gerar alerta. |
-
-| **Critérios de aceitação** |
-| :-- |
-| - A compra deve ser negada imediatamente. |
-| - Logs de auditoria devem registrar a tentativa suspeita. |
-| - Nenhum registro deve ser salvo no histórico de compras. |
-
-| **Evidência(s)** |
-| :--: |
-| [Vídeo]("") |
+| [Vídeo](https://drive.google.com/file/d/1_iHGiI6SbyMj5EcosGxB0ozUuuRBHLZv/view?usp=drive_link) |
 
 ---
 
@@ -407,61 +379,6 @@
 
 | **Evidência(s)** |
 | :--: |
-| [Vídeo]("") |
+| [Vídeo](https://drive.google.com/file/d/1HcrUZO8PxBH5tnGlx0E7UudxvanGjxlB/view?usp=drive_link) |
 
 ---
-
-## **Caso de Teste CT_RF04_NEG_07: Falha ao gerar relatório de contas a receber (filtros inválidos)**
-
-| ID | Descrição |
-| :-- | :-- |
-| CT_RF04_NEG_07 | Tentar gerar relatório com filtros inválidos ou período inexistente. |
-
-| **Pré-condições** |
-| :-- |
-| - Registro de compras existente. |
-| - Módulo de relatórios ativo. |
-
-| **Passos** |
-| :-- |
-| **DADO** que o usuário acessa o módulo de relatórios |
-| **QUANDO** selecionar filtros inválidos (datas invertidas, período inexistente, etc.) |
-| **ENTÃO** o sistema deve impedir a geração. |
-
-| **Critérios de aceitação** |
-| :-- |
-| - O relatório não deve ser gerado. |
-| - Mensagem de erro deve aparecer. |
-| - Nenhum dado incorreto deve ser exibido. |
-
-| **Evidência(s)** |
-| :--: |
-| [Vídeo]("") |
-
----
-
-## **Caso de Teste CT_RF04_NEG_08: Inconsistências no histórico no banco de dados**
-
-| ID | Descrição |
-| :-- | :-- |
-| CT_RF04_NEG_08 | Validar que o sistema não permita dados inconsistentes ou duplicados no histórico de compras. |
-
-| **Pré-condições** |
-| :-- |
-| - Tentativas de compras duplicadas ou inconsistentes devem existir no log do sistema. |
-
-| **Passos** |
-| :-- |
-| **DADO** que o analista consulta o banco |
-| **QUANDO** identificar possíveis duplicidades geradas por falhas |
-| **ENTÃO** deve ser possível evidenciar que o sistema preveniu gravações incorretas. |
-
-| **Critérios de aceitação** |
-| :-- |
-| - Não devem existir compras duplicadas. |
-| - Não devem existir registros de bloqueio sem justificativa. |
-| - Integridade referencial deve ser mantida. |
-
-| **Evidência(s)** |
-| :--: |
-| [Vídeo]("") |

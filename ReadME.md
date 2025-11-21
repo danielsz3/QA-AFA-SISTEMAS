@@ -11,8 +11,8 @@
 
 | Foto | Nome | RA | GitHub |
 |------|------|------|--------|
-| ![Daniel Mesquita](https://github.com/danielsz3.png) | **Daniel Mesquita Oliveira** | 14044 | https://github.com/danielsz3 |
-| ![Gustavo Passos](https://github.com/GustavoPS18.png) | **Gustavo Passos** | 14262 | https://github.com/GustavoPS18 |
+| ![Daniel Mesquita](https://github.com/danielsz3.png) | **Daniel Mesquita Oliveira** | 14044 | [Daniel](https://github.com/danielsz3) |
+| ![Gustavo Passos](https://github.com/GustavoPS18.png) | **Gustavo Passos** | 14262 | [Gustavo](https://github.com/GustavoPS18) |
 
 ---
 
@@ -125,18 +125,9 @@ Cada rotina também foi validada diretamente no **banco de dados**, assegurando 
 
 ---
 
-# 👥 Autores
-
-| Nome | RA | GitHub |
-|------|------|--------|
-| Daniel Mesquita Oliveira | 14044 | https://github.com/danielsz3 |
-| Gustavo Passos | 14262 | https://github.com/GustavoPS18 |
-
----
-
 ## 📄 Documento Base
 
-**ROTINAS AFA SISTEMAS.pdf** — utilizado como referência para criação dos cenários.
+[ROTINAS AFA SISTEMAS](https://drive.google.com/file/d/1mQj3J2XqZtJrAnCYVYXe0L1Wtso1Ovv8/view?usp=drive_link) — utilizado como referência para criação dos cenários.
 
 ---
 

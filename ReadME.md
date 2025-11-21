@@ -1,10 +1,7 @@
 # 📘 Extensão QA — Vídeos de Rotinas e Cenários de Teste
 
-### Daniel Mesquita (RA 14044)
----
-### Gustavo Passos (RA 14262)  
----
-### Projeto de Extensão • AFA Sistemas
+## Projeto de Extensão • AFA Sistemas
+
 ---
 
 ## 👤 Integrantes do Projeto

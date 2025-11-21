@@ -152,3 +152,130 @@
 | :--: |
 | [Foto](https://drive.google.com/file/d/1wtV6sE5YnbH91oBMVFp_K8KtGnS5ckRQ/view?usp=drive_link) |
 | [Foto](https://drive.google.com/file/d/1GAlUps7whoUgTE813mTmeOmnjesKOzN-/view?usp=drive_link) |
+
+---
+
+# **Cenários Negativos – RF03: Compra com Fornecedores**
+
+---
+
+## **Caso de Teste CT_RF03_01_NEG: Falha ao cadastrar novo fornecedor**
+
+| ID | Descrição |
+| :-- | :-- |
+| CT_RF03_01_NEG | Tentar cadastrar fornecedor com dados inválidos ou incompletos. |
+
+| **Pré-condições** |
+| :-- |
+| - O módulo de compras deve estar ativo. |
+| - O usuário deve possuir permissão para gerenciar fornecedores. |
+
+| **Passos** |
+| :-- |
+| **DADO** que o usuário acessa o módulo de fornecedores |
+| **E** tenta inserir dados inválidos (ex.: CNPJ inválido, campos obrigatórios vazios) |
+| **QUANDO** tentar salvar o cadastro |
+| **ENTÃO** o sistema deve bloquear a operação e exibir mensagens de erro. |
+
+| **Critérios de aceitação** |
+| :-- |
+| - O sistema não deve permitir salvar o fornecedor. |
+| - Devem ser exibidas mensagens indicando os campos incorretos. |
+| - Nenhum registro deve ser criado no banco de dados. |
+
+| **Evidência(s)** |
+| :--: |
+| [Vídeo](https://drive.google.com/file/d/1yFvozV63m8yH5oT1iYPBRtOUMCFzIJqy/view?usp=drive_link) |
+
+---
+
+## **Caso de Teste CT_RF03_02_NEG: Falha ao gerar pedido de compra com 10 itens**
+
+| ID | Descrição |
+| :-- | :-- |
+| CT_RF03_02_NEG | Tentar gerar um pedido com itens inválidos ou fornecedor inexistente. |
+
+| **Pré-condições** |
+| :-- |
+| - Deve existir pelo menos um fornecedor cadastrado. |
+| - O módulo de pedidos de compra deve estar ativo. |
+
+| **Passos** |
+| :-- |
+| **DADO** que o usuário acessa o módulo de pedidos de compra |
+| **E** seleciona um fornecedor inexistente ou remove-o antes de salvar |
+| **OU** insere itens com valores ou quantidades inválidas |
+| **QUANDO** tentar salvar o pedido |
+| **ENTÃO** o sistema deve impedir a criação do pedido e exibir mensagens de erro. |
+
+| **Critérios de aceitação** |
+| :-- |
+| - O sistema deve impedir salvar itens inválidos. |
+| - Nenhum pedido deve ser registrado no banco de dados. |
+| - Mensagens claras devem indicar o motivo da falha. |
+
+| **Evidência(s)** |
+| :--: |
+| [Vídeo](https://drive.google.com/file/d/1NOTNhJgOgHT-C-tTbFSAYA9-OkXlPqh6/view?usp=drive_link) |
+
+---
+
+## **Caso de Teste CT_RF03_03_NEG: Falha ao simular parcelamento e pagamentos**
+
+| ID | Descrição |
+| :-- | :-- |
+| CT_RF03_03_NEG | Tentar registrar pagamento em parcela inexistente ou valores superiores ao permitido. |
+
+| **Pré-condições** |
+| :-- |
+| - Deve existir um pedido parcelado no contas a pagar. |
+| - O usuário deve ter permissão para registrar pagamentos. |
+
+| **Passos** |
+| :-- |
+| **DADO** que o usuário tenta pagar uma parcela inexistente |
+| **OU** tenta registrar pagamento maior que o valor da parcela |
+| **QUANDO** tentar confirmar o pagamento |
+| **ENTÃO** o sistema deve impedir o registro e exibir mensagens de erro. |
+
+| **Critérios de aceitação** |
+| :-- |
+| - O sistema não deve aceitar valores inconsistentes. |
+| - Nenhum pagamento inválido deve ser registrado. |
+| - O histórico de pagamentos deve permanecer íntegro. |
+
+| **Evidência(s)** |
+| :--: |
+| [Vídeo](https://drive.google.com/file/d/1TImG60Trbx9qvmXbDwIbB8SE4FLM6WZq/view?usp=drive_link) |
+
+---
+
+## **Caso de Teste CT_RF03_04_NEG: Falha no fechamento de caixa**
+
+| ID | Descrição |
+| :-- | :-- |
+| CT_RF03_04_NEG | Tentar realizar fechamento de caixa com pendências ou dados inconsistentes. |
+
+| **Pré-condições** |
+| :-- |
+| - Deve haver pagamentos no período. |
+| - O módulo de fechamento de caixa deve estar disponível. |
+
+| **Passos** |
+| :-- |
+| **DADO** que existem inconsistências nos registros de pagamentos (ex.: valores negativos ou duplicados) |
+| **OU** o usuário não tem permissão para fechar o caixa |
+| **QUANDO** tentar realizar o fechamento |
+| **ENTÃO** o sistema deve impedir o fechamento e exibir mensagens de erro. |
+
+| **Critérios de aceitação** |
+| :-- |
+| - O fechamento não deve ser concluído. |
+| - Deve ser exibida uma mensagem indicando a inconsistência ou falta de permissão. |
+| - Nenhum dado incorreto deve ser gravado no banco. |
+
+| **Evidência(s)** |
+| :--: |
+| [Vídeo](https://drive.google.com/file/d/1ArhqY3J5M45JtUG4SRovaE2aax4QKOms/view?usp=drive_link) |
+
+---

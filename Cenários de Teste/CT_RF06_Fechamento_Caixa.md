@@ -1,21 +1,21 @@
 # **Cenário RF06: Fechamento de Caixa**
 
-## **Caso de Teste CT_RF06_01: Simular operações em 3 caixas simultâneas**
+## **Caso de Teste CT_RF06_01: Simular operações em 1 caixa**
 
 | ID | Descrição |
 | :-- | :-- |
-| CT_RF06_01 | Realizar operações simultâneas em 3 caixas diferentes e validar o registro correto em cada um. |
+| CT_RF06_01 | Realizar operações em 1 caixa diferentes e validar o registro correto em cada um. |
 
 | **Pré-condições** |
 | :-- |
 | - Sistema com **módulo de caixa ativo**. |
-| - **3 caixas** configurados e operacionais. |
+| - **1 caixa** configurados e operacionais. |
 | - O usuário deve possuir permissão para realizar operações de venda. |
 
 | **Passos** |
 | :-- |
 | **DADO** que o usuário acessa o módulo de caixa |
-| **QUANDO** abrir **3 sessões de caixa simultâneas** e realizar vendas e movimentações em cada caixa |
+| **QUANDO** abrir **1 sessão de caixa** e realizar vendas e movimentações em cada caixa |
 | **ENTÃO** as operações devem ser registradas corretamente em cada caixa. |
 
 | **Critérios de aceitação** |
@@ -182,22 +182,22 @@
 
 ---
 
-## **Caso de Teste Negativo CT_RF06_01_N: Falha ao operar 3 caixas simultâneos sem permissão**
+## **Caso de Teste Negativo CT_RF06_01_N: Falha ao operar 1 caixa sem permissão**
 
 | ID | Descrição |
 | :-- | :-- |
-| CT_RF06_01_N | Tentar realizar operações simultâneas em 3 caixas sem permissão adequada. |
+| CT_RF06_01_N | Tentar realizar operações em 1 caixa sem permissão adequada. |
 
 | **Pré-condições** |
 | :-- |
 | - Sistema com **módulo de caixa ativo**. |
-| - **3 caixas** configurados e operacionais. |
+| - **1 caixa** configurados e operacionais. |
 | - **Usuário sem permissão** para operar vendas em múltiplos caixas. |
 
 | **Passos** |
 | :-- |
 | **DADO** que o usuário acessa o módulo de caixa sem permissão necessária |  
-| **QUANDO** tentar abrir **3 sessões de caixa simultâneas** e realizar vendas |  
+| **QUANDO** tentar abrir **1 sessão de caixa** e realizar vendas |  
 | **ENTÃO** o sistema deve **bloquear a operação** e exibir mensagem de permissão negada. |
 
 | **Critérios de aceitação** |

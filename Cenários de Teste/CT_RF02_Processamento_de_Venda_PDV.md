@@ -174,7 +174,7 @@
 
 | **Evidência(s)** |
 | :--: |
-| [Vídeo]("") |
+| [Vídeo](https://drive.google.com/file/d/14mhhJo95WHFkZGg0BjR9Ld53iIeFQC_7/view?usp=drive_link) |
 
 ---
 
@@ -203,7 +203,7 @@
 
 | **Evidência(s)** |
 | :--: |
-| [Vídeo]("") |
+| [Vídeo](https://drive.google.com/file/d/1rfkZZRB6Sc5jP3dQhiwz2y4IGt-ke5R6/view?usp=drive_link) |
 
 ---
 
@@ -232,7 +232,7 @@
 
 | **Evidência(s)** |
 | :--: |
-| [Vídeo]("") |
+| [Vídeo](https://drive.google.com/file/d/1neA_-OAuMBsxC5hTlc4nQRLJVOxWphVX/view?usp=drive_link) |
 
 ---
 
@@ -262,35 +262,6 @@
 
 | **Evidência(s)** |
 | :--: |
-| [Vídeo]("") |
-
----
-
-## **Caso de Teste Negativo CT_RF12_05_N: Falha na validação de integridade no banco de dados**
-
-| ID | Descrição |
-| :-- | :-- |
-| CT_RF12_05_N | Detectar erros de integridade nos registros financeiros após o processo de venda. |
-
-| **Pré-condições** |
-| :-- |
-| - Venda finalizada anteriormente. |
-| - Banco de dados com registros inconsistentes ou manipulados. |
-
-| **Passos** |
-| :-- |
-| **DADO** que o analista consulta as tabelas financeiras |  
-| **QUANDO** identifica divergência entre valores de venda, pagamento e registros de caixa |  
-| **ENTÃO** o sistema deve alertar o erro e impedir continuidade de operações dependentes. |
-
-| **Critérios de Aceitação** |
-| :-- |
-| - Divergências devem ser identificadas corretamente. |
-| - Sistema não deve permitir ações que dependem desses valores. |
-| - Log ou alerta deve ser registrado. |
-
-| **Evidência(s)** |
-| :--: |
-| [Vídeo]("") |
+| [Vídeo](https://drive.google.com/file/d/1pCTMYm-pD-PTMIacoEYxa3Agd8wit72G/view?usp=drive_link) |
 
 ---

@@ -1,74 +1,267 @@
-# CT_RF12_ Processamento de Venda (PDV)
-
-## Objetivo
-Validar o fluxo completo de vendas e fechamento de caixa, incluindo descontos e pagamento misto.
-
-## Pré-requisitos
-- Sistema com módulo PDV ativo.
-- Produtos cadastrados para venda.
-- Caixa aberto para registro das vendas.
-
-## Cenários de Teste
-
-### CT_RF12_01_ Iniciar nova venda com 5 itens
-**Descrição:** Registrar uma venda com 5 itens no PDV.
-
-**Passos:**
-1. Acessar o módulo PDV.
-2. Iniciar nova venda.
-3. Adicionar 5 itens ao carrinho.
-4. Confirmar os itens adicionados.
-
-**Dados de Entrada:**
-- 5 produtos diferentes com quantidades definidas.
-
-**Resultado Esperado:**
-- Itens adicionados corretamente ao carrinho.
-- Total da venda calculado corretamente.
+# **Cenário RF12 — Processamento de Venda (PDV)**
 
 ---
 
-### CT_RF12_02_ Aplicar desconto promocional em 1 item
-**Descrição:** Aplicar desconto em um dos itens da venda.
+| **Objetivo** |
+| :-- |
+| Validar o fluxo completo de vendas e fechamento de caixa, incluindo descontos e pagamento misto. |
 
-**Passos:**
-1. Selecionar um item no carrinho.
-2. Aplicar desconto promocional (ex: 10%).
-3. Confirmar o desconto aplicado.
-
-**Resultado Esperado:**
-- Desconto aplicado corretamente no item.
-- Total da venda atualizado com desconto.
+| **Pré-requisitos** |
+| :-- |
+| - Sistema com módulo PDV ativo. |
+| - Produtos cadastrados para venda. |
+| - Caixa aberto para registro das vendas. |
 
 ---
 
-### CT_RF12_03_ Finalizar venda com pagamento misto
-**Descrição:** Finalizar a venda com pagamento misto: 70% cartão e 30% dinheiro.
+## **Caso de Teste CT_RF12_01: Iniciar nova venda com 5 itens**
 
-**Passos:**
-1. Selecionar forma de pagamento cartão para 70% do valor.
-2. Selecionar forma de pagamento dinheiro para 30% do valor.
-3. Confirmar pagamento e finalizar venda.
+| ID | Descrição |
+| :-- | :-- |
+| CT_RF12_01 | Registrar uma venda com 5 itens no PDV. |
 
-**Resultado Esperado:**
-- Pagamento registrado corretamente nas duas formas.
-- Venda finalizada com sucesso.
+| **Pré-condições** |
+| :-- |
+| - Módulo PDV ativo. |
+| - Produtos cadastrados. |
+| - Caixa aberto. |
+
+| **Passos** |
+| :-- |
+| **DADO** que o usuário acessa o PDV |  
+| **QUANDO** inicia uma nova venda e adiciona 5 itens ao carrinho |  
+| **ENTÃO** os itens devem ser registrados corretamente no carrinho. |
+
+| **Dados de Entrada** |
+| :-- |
+| - 5 produtos diferentes com quantidades definidas. |
+
+| **Critérios de Aceitação** |
+| :-- |
+| - Itens adicionados corretamente ao carrinho. |
+| - Total calculado corretamente. |
+
+| **Evidência(s)** |
+| :--: |
+| [Vídeo](https://drive.google.com/file/d/1F1bvwLGbqAiAmATXZs5m6MkNcAFYhlTc/view?usp=sharing) |
 
 ---
 
-### CT_RF12_04_ Fechamento de caixa e validação por tipo de documento
-**Descrição:** Fechar o caixa e validar os totais por tipo de documento.
+## **Caso de Teste CT_RF12_02: Aplicar desconto promocional em 1 item**
 
-**Passos:**
-1. Acessar o módulo de fechamento de caixa.
-2. Realizar fechamento do caixa.
-3. Validar os totais por tipo de documento (dinheiro, cartão).
+| ID | Descrição |
+| :-- | :-- |
+| CT_RF12_02 | Aplicar desconto promocional em um item da venda. |
 
-**Resultado Esperado:**
-- Fechamento realizado com sucesso.
-- Totais por tipo de documento conferidos e corretos.
+| **Pré-condições** |
+| :-- |
+| - Venda iniciada. |
+| - Itens cadastrados no carrinho. |
+
+| **Passos** |
+| :-- |
+| **DADO** que o usuário seleciona um item no carrinho |  
+| **QUANDO** aplica um desconto promocional (ex: 10%) |  
+| **ENTÃO** o item deve refletir o desconto e o total da venda deve ser recalculado. |
+
+| **Critérios de Aceitação** |
+| :-- |
+| - Desconto aplicado corretamente. |
+| - Total atualizado com desconto. |
+
+| **Evidência(s)** |
+| :--: |
+| [Vídeo](https://drive.google.com/file/d/1Zq-lt9MmpESbBQYuxg43J6YVycW3Aivb/view?usp=sharing) |
 
 ---
 
-### Validação BD
-- Checar integridade dos cálculos e registros financeiros no banco de dados.
+## **Caso de Teste CT_RF12_03: Finalizar venda com pagamento misto**
+
+| ID | Descrição |
+| :-- | :-- |
+| CT_RF12_03 | Finalizar venda com pagamento misto: 70% cartão e 30% dinheiro. |
+
+| **Pré-condições** |
+| :-- |
+| - Venda em andamento. |
+| - Itens revisados no carrinho. |
+
+| **Passos** |
+| :-- |
+| **DADO** que o usuário seleciona formas de pagamento |  
+| **QUANDO** define 70% do valor em cartão e 30% em dinheiro |  
+| **ENTÃO** a venda deve ser finalizada com sucesso e os pagamentos registrados. |
+
+| **Critérios de Aceitação** |
+| :-- |
+| - Pagamento misto registrado corretamente. |
+| - Venda finalizada sem erros. |
+
+| **Evidência(s)** |
+| :--: |
+| [Vídeo](https://drive.google.com/file/d/1X37sq-iUuB7aUV5Bf3HErGDwMRERPuWk/view?usp=sharing) |
+
+---
+
+## **Caso de Teste CT_RF12_04: Fechamento de caixa e validação por tipo de documento**
+
+| ID | Descrição |
+| :-- | :-- |
+| CT_RF12_04 | Realizar fechamento de caixa e validar totais por tipo de documento. |
+
+| **Pré-condições** |
+| :-- |
+| - Venda(s) registrada(s). |
+| - Caixa aberto e operacional. |
+
+| **Passos** |
+| :-- |
+| **DADO** que o usuário acessa o módulo de fechamento de caixa |  
+| **QUANDO** realiza o fechamento |  
+| **ENTÃO** os totais por tipo de documento devem ser exibidos corretamente. |
+
+| **Critérios de Aceitação** |
+| :-- |
+| - Fechamento realizado com sucesso. |
+| - Totais corretos por cada tipo de documento (dinheiro, cartão). |
+
+| **Evidência(s)** |
+| :--: |
+| [Vídeo](https://drive.google.com/file/d/1ZECSYeDLawtLU_q2cMMkHZPBA5tauhtb/view?usp=sharing) |
+
+---
+
+## **Validação no Banco de Dados**
+
+| Critérios |
+| :-- |
+| - Validar integridade dos cálculos. |
+| - Validar registros financeiros gravados corretamente no BD. |
+
+| **Evidência(s)** |
+| :--: |
+| [Vídeo](https://drive.google.com/file/d/1FoeautySTxti4IisVl6JlDZOd1OzgNKM/view?usp=drive_link) |
+
+---
+
+# **Cenário RF12 — Negativos (Processamento de Venda - PDV)**
+
+---
+
+## **Caso de Teste Negativo CT_RF12_01_N: Falha ao iniciar venda com item inválido**
+
+| ID | Descrição |
+| :-- | :-- |
+| CT_RF12_01_N | Tentar iniciar venda adicionando item inexistente ou inativo. |
+
+| **Pré-condições** |
+| :-- |
+| - Módulo PDV ativo. |
+| - Caixa aberto. |
+| - Produto inexistente, inativo ou sem estoque. |
+
+| **Passos** |
+| :-- |
+| **DADO** que o usuário inicia uma nova venda no PDV |  
+| **QUANDO** tenta adicionar ao carrinho um item inexistente ou sem estoque |  
+| **ENTÃO** o sistema deve impedir a adição e exibir mensagem de erro. |
+
+| **Critérios de Aceitação** |
+| :-- |
+| - Item não deve ser adicionado ao carrinho. |
+| - Total da venda deve permanecer inalterado. |
+| - Mensagem clara deve informar que o item é inválido ou indisponível. |
+
+| **Evidência(s)** |
+| :--: |
+| [Vídeo](https://drive.google.com/file/d/14mhhJo95WHFkZGg0BjR9Ld53iIeFQC_7/view?usp=drive_link) |
+
+---
+
+## **Caso de Teste Negativo CT_RF12_02_N: Falha ao aplicar desconto inválido**
+
+| ID | Descrição |
+| :-- | :-- |
+| CT_RF12_02_N | Tentar aplicar desconto superior ao permitido ou em formato inválido. |
+
+| **Pré-condições** |
+| :-- |
+| - Venda iniciada com itens no carrinho. |
+| - Regras de desconto configuradas no sistema. |
+
+| **Passos** |
+| :-- |
+| **DADO** que o usuário seleciona um item no carrinho |  
+| **QUANDO** tenta aplicar um desconto inválido (ex: 90%, negativo ou maior que o permitido) |  
+| **ENTÃO** o sistema deve rejeitar o desconto e manter o valor original. |
+
+| **Critérios de Aceitação** |
+| :-- |
+| - Desconto não deve ser aplicado. |
+| - Totais não devem sofrer alteração. |
+| - Sistema deve exibir mensagem informando o erro no desconto. |
+
+| **Evidência(s)** |
+| :--: |
+| [Vídeo](https://drive.google.com/file/d/1rfkZZRB6Sc5jP3dQhiwz2y4IGt-ke5R6/view?usp=drive_link) |
+
+---
+
+## **Caso de Teste Negativo CT_RF12_03_N: Falha ao finalizar venda com pagamento misto inválido**
+
+| ID | Descrição |
+| :-- | :-- |
+| CT_RF12_03_N | Tentar finalizar venda com soma incorreta das formas de pagamento. |
+
+| **Pré-condições** |
+| :-- |
+| - Venda em andamento com itens cadastrados. |
+| - Formas de pagamento habilitadas no sistema. |
+
+| **Passos** |
+| :-- |
+| **DADO** que o usuário seleciona formas de pagamento |  
+| **QUANDO** tenta registrar pagamento misto cuja soma não corresponde ao valor total da venda |  
+| **ENTÃO** o sistema deve impedir a finalização e exibir mensagem de inconsistência. |
+
+| **Critérios de Aceitação** |
+| :-- |
+| - Venda não deve ser finalizada. |
+| - Nenhum pagamento deve ser registrado. |
+| - Mensagem clara deve indicar que o total pago é diferente do total da venda. |
+
+| **Evidência(s)** |
+| :--: |
+| [Vídeo](https://drive.google.com/file/d/1neA_-OAuMBsxC5hTlc4nQRLJVOxWphVX/view?usp=drive_link) |
+
+---
+
+## **Caso de Teste Negativo CT_RF12_04_N: Falha no fechamento de caixa com totais incorretos**
+
+| ID | Descrição |
+| :-- | :-- |
+| CT_RF12_04_N | Tentar fechar caixa com divergência nos totais por tipo de documento. |
+
+| **Pré-condições** |
+| :-- |
+| - Venda(s) registradas com erro simulado ou divergências. |
+| - Caixa aberto. |
+
+| **Passos** |
+| :-- |
+| **DADO** que o usuário acessa o módulo de fechamento de caixa |  
+| **E** o sistema apresenta diferenças entre os valores por tipo de documento |  
+| **QUANDO** tenta concluir o fechamento |  
+| **ENTÃO** o sistema deve bloquear a operação e informar divergência. |
+
+| **Critérios de Aceitação** |
+| :-- |
+| - Fechamento não deve ser concluído. |
+| - Sistema deve alertar sobre documentos divergentes. |
+| - Nenhum registro final deve ser gravado no banco. |
+
+| **Evidência(s)** |
+| :--: |
+| [Vídeo](https://drive.google.com/file/d/1pCTMYm-pD-PTMIacoEYxa3Agd8wit72G/view?usp=drive_link) |
+
+---
